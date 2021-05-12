@@ -1,3 +1,4 @@
+!pip install selenium
 import pandas as pd
 from selenium import webdriver
 import time
@@ -22,12 +23,12 @@ def watch_this_youtube_video(*, url):
 
   browser.get('https://www.youtube.com/watch?v=BVG86ppZ67w&t=1s')
   vidButton = browser.find_element_by_class_name('ytp-large-play-button')
-  muteButton = browser.find_element_by_class_name('ytp-mute-button')
+  #muteButton = browser.find_element_by_class_name('ytp-mute-button')
   time.sleep(5)
   type(vidButton)
   vidButton.click()
-  type(muteButton)
-  muteButton.click()
+  #type(muteButton)
+  #muteButton.click()
   time.sleep(120)
 
   for i in range(1000):
