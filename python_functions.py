@@ -1,4 +1,6 @@
 import pandas as pd
+from selenium import webdriver
+import time
 
 def remove_list_item(*, the_list, the_item):
 
@@ -13,3 +15,20 @@ def plot_x_by_class_y(*, table, x_column, y_column):
 
   pd.crosstab(table[x_column], table[y_column]).plot(kind='bar', figsize=(15,8), grid=True, logy=True)
   return None
+
+def watch_this_video(*, url):
+  browser = webdriver.Firefox()
+
+  for i in range(1000):
+      print('Page viewed ' + str(i + 1) + ' times.')
+      browser.get('https://www.youtube.com/watch?v=OaThVbxKFRw')
+      vidButton = browser.find_element_by_class_name('ytp-large-play-button')
+      muteButton = browser.find_element_by_class_name('ytp-mute-button')
+      time.sleep(1)
+      type(vidButton)
+      vidButton.click()
+      type(muteButton)
+      muteButton.click()
+      time.sleep(145)
+      i = i + 1
+  print('All done.')
