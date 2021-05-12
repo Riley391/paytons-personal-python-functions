@@ -38,3 +38,8 @@ def watch_this_youtube_video(*, url):
   print('All done.')
   
   return None
+
+def add_these_numbers(*, first, second):
+  result = first + second
+  print(result)
+  return None
