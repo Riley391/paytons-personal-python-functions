@@ -1,3 +1,4 @@
+pip install selenium
 import pandas as pd
 from selenium import webdriver
 import time
@@ -17,18 +18,24 @@ def plot_x_by_class_y(*, table, x_column, y_column):
   return None
 
 def watch_this_youtube_video(*, url):
+
   browser = webdriver.Firefox()
 
+  browser.get('https://www.youtube.com/watch?v=BVG86ppZ67w&t=1s')
+  vidButton = browser.find_element_by_class_name('ytp-large-play-button')
+  muteButton = browser.find_element_by_class_name('ytp-mute-button')
+  time.sleep(5)
+  type(vidButton)
+  vidButton.click()
+  type(muteButton)
+  muteButton.click()
+  time.sleep(120)
+
   for i in range(1000):
-      print('Page viewed ' + str(i + 1) + ' times.')
-      browser.get(url)
-      vidButton = browser.find_element_by_class_name('ytp-large-play-button')
-      muteButton = browser.find_element_by_class_name('ytp-mute-button')
-      time.sleep(1)
-      type(vidButton)
-      vidButton.click()
-      type(muteButton)
-      muteButton.click()
-      time.sleep(145)
-      i = i + 1
+    print('Page viewed ' + str(i + 1) + ' times.')
+    browser.get('https://www.youtube.com/watch?v=BVG86ppZ67w&t=1s')
+    time.sleep(120)
+    i = i + 1
   print('All done.')
+  
+  return None
