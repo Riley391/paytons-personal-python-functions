@@ -1,4 +1,4 @@
-pip install selenium
+%pip install selenium
 import pandas as pd
 from selenium import webdriver
 import time
